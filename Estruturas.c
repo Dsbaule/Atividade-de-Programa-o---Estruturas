@@ -14,4 +14,11 @@ int main()
 		unsigned int g;
 		unsigned int b;
 	};
+	
+	struct Circulo
+	{
+		struct 	Ponto2D centro;
+		float 	raio;
+		float 	cor;
+	};
 }
