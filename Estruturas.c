@@ -21,4 +21,7 @@ int main()
 		float 	raio;
 		float 	cor;
 	};
+	
+	struct Ponto2D ponto1;
+	struct Circulo circ1;
 }
