@@ -62,6 +62,24 @@ int ehInterno(const struct Ponto2D *p, const struct Circulo *c)
         return 0;
 }
 
+int leArquivoInstancias(char nomearquivo[], struct Ponto2D *p, struct Circulo *c)
+{
+    char buffer[10];
+    int n;
+
+    FILE *fp = fopen(nomearquivo, "r");
+
+    if(fp == NULL)
+        return -1;
+    else
+        fscanf(fp,"%s", buffer);
+        fscanf(fp,"%f %f", &p->x, &p->y);
+        fscanf(fp,"%s", buffer);
+        fscanf(fp,"%f %f %f %d %d %d", &c->centro.x, &c->centro.y, &c->raio, &c->cor.r, &c->cor.g, &c->cor.b);
+        fclose(fp);
+        return 1;
+}
+
 int main()
 {
     struct Ponto2D
@@ -87,7 +105,9 @@ int main()
     struct Ponto2D ponto1;
     struct Circulo circ1;
 
-    leInstancias(&ponto1, &circ1);
+    //leInstancias(&ponto1, &circ1);
+    if(leArquivoInstancias("teste.txt", &ponto1, &circ1) == -1)
+       return -1;
     mostraInstancias(&ponto1, &circ1);
     printf("\n%d\n", ehInterno(&ponto1, &circ1));
 }
