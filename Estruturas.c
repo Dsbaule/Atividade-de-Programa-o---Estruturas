@@ -82,26 +82,6 @@ int leArquivoInstancias(char nomearquivo[], struct Ponto2D *p, struct Circulo *c
 
 int main()
 {
-    struct Ponto2D
-    {
-        float x;
-        float y;
-    };
-
-    struct CorRGB
-    {
-        unsigned int r;
-        unsigned int g;
-        unsigned int b;
-    };
-
-    struct Circulo
-    {
-        struct 	Ponto2D	centro;
-        float 	raio;
-        struct 	CorRGB	cor;
-    };
-
     struct Ponto2D ponto1;
     struct Circulo circ1;
 
@@ -109,5 +89,5 @@ int main()
     if(leArquivoInstancias("teste.txt", &ponto1, &circ1) == -1)
        return -1;
     mostraInstancias(&ponto1, &circ1);
-    printf("\n%d\n", ehInterno(&ponto1, &circ1));
+    //printf("\n%d\n", ehInterno(&ponto1, &circ1));
 }
